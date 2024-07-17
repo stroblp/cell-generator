@@ -43,10 +43,8 @@
             const rows = paste.split('\n').map(row => row.split('\t'));
 
             const df = new dfd.DataFrame(rows.slice(1), { columns: rows[0] });
-            alert("ok")
             df.plot("div2").table(); // Display CSV as table
-            const tableHTML = await df.toHTML();
-            outputDiv.innerHTML = tableHTML;
+
         });
 
         function copyTable() {
@@ -59,15 +57,7 @@
             alert('Table copied to clipboard');
         }
 
-        // dfd.readCSV("https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv")
-        //     .then(df => {
-        //         df.plot("div2").table(); // Display CSV as table
 
-        //         const new_df = df.setIndex({ column: "Date", drop: true }); // Resets the index to Date column
-        //         new_df.head().print();
-        //     }).catch(err => {
-        //         console.log(err);
-        //     });
     </script>
 </body>
 </html>
